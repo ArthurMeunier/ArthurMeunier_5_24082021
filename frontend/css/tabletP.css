@@ -1,0 +1,39 @@
+/* ### TABLET PORTRAIT CSS | WIDTH: 481PX TO 768PX ### */
+/* ### MAIN ### */
+
+body {
+  max-width: 768px;
+}
+
+.footer {
+  max-width: 768px;
+}
+
+.explore__btn {
+  width: 15rem;
+}
+
+.tuto__step {
+  width: 50%;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card {
+  width: 75%;
+}
+
+.submenu__tick {
+  right: -15%;
+}
+
+.submenu__item:hover .submenu__tick {
+  transform: translateX(-100%);
+}
+
+.submenu__item:hover .submenu__price {
+  transform: translateX(-125%);
+}
