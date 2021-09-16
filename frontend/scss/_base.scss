@@ -6,7 +6,6 @@ body {
 
 .main {
   font-family: 'Montserrat', sans-serif;
-  min-height: calc(100vh - 175px);
   background-color: rgb(223, 189, 126);
   display: flex;
   flex-direction: column;
@@ -15,6 +14,7 @@ body {
 }
 
 .header {
+  font-family: 'Montserrat', sans-serif;
   background-color: black;
   height: 100px;
   display: flex;
@@ -23,11 +23,24 @@ body {
 &__logo {
   height: 70px;
 }
-&__cart {
+.cart {
   color: white;
-  font-size: xx-large;
   margin-right: 2rem;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  &__icon {
+    font-size: xx-large;
+    color: white;
+  }
+  &__number {
+    font-size: medium;
+    margin-top: 5px;
+    margin-left: 4px;
+  }
 }
 }
 

@@ -1,0 +1,176 @@
+#cartcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#cartcontainer h2 {
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+#cart__list {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px dashed black;
+}
+
+.cart__name {
+@include cartlist;
+font-weight: 600;
+}
+
+
+.cart__price {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  width: 33%;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.cart__option {
+@include cartlist;
+font-style: italic;
+font-size: small;
+}
+
+.cart__delete {
+  cursor: pointer;
+  color: rgb(241, 76, 76);
+}
+
+#cart__total {
+  display: flex;
+  width: 28%;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.cart__textprice {
+  font-weight: bold;
+}
+
+#cart__empty {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: small;
+  @include center;
+  cursor: pointer;
+  border-radius: 14px;
+  background-color: wheat;
+  height: 30px;
+}
+
+#formcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 13rem;
+  & h2 {
+    margin-bottom: 25px;
+  }
+}
+
+label{
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 125px;
+  text-align: right;
+}
+
+input {
+display: inline-block;
+float: left;
+padding-left: 5px;
+}
+
+label, input {
+  font-family: 'Montserrat', sans-serif;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input, select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:active {
+  padding-left: 5px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__names {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__adress {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  &__cityzip {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__contact {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__submit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 300;
+    font-weight: bold;
+    width: 25%;
+    margin-top: 25px;
+    @include center;
+    cursor: pointer;
+    border-radius: 14px;
+    background-color: rgb(23, 139, 101);
+    height: 3rem;
+    border: 1px solid gold;
+    transform: scale(1.0);
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.25);
+      transition: 0.3s;
+    }
+  }
+}
+
+.form__adress input {
+  width: 40%;
+}
+
+

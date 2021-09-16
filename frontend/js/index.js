@@ -1,6 +1,11 @@
 window.onload = function ()
 {
   getProducts();
+  let cart = JSON.parse(localStorage.getItem('cart'));
+  if (cart === null) {
+    cart = [];
+  }
+  document.querySelector('.cart span').textContent = cart.length;
 }
 
 // Récupération des articles 
@@ -30,9 +35,9 @@ function getProducts() {
 
         let price = document.createElement ("div");
         price.className = "product__price"
-        price.innerText = `${product.price} €`;
+        const formatPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(product.price/100)
+        price.innerText = formatPrice;
         a.appendChild(price);
-
       })
       {
       }
@@ -41,5 +46,3 @@ function getProducts() {
       alert(error)
     })
 }
-
-

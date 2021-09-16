@@ -16,18 +16,75 @@
 <!--<Header-->
   <header class="header">
     <a href="index.html"><img src="img/oricamera_logo.png" href="/" class="header__logo" alt="oricamera logo"></a>
-    <i class="fas fa-shopping-cart header__cart"></i>
+    <a href="cart.html" class ="cart">
+        <i class="fas fa-shopping-cart cart__icon"></i>
+      <span class="cart__number">0</span>
+    </a>
   </header>
 <!--Header>-->
 <!--<Main-->
   <main class="main">
 
-
-
-
-
+    <div id="cartcontainer">
+      <h2>Votre panier</h2>
+        <div id="cart__list">
+        </div>
+        <div id="cart__total">
+        </div>
+        <button id="cart__empty">Vider le panier</button>
     </div>
-
+  
+    <div id="formcontainer">
+      <h2>Livraison</h2>
+      <form id="form">
+          <div class="form__names">
+              <div class="form__firstname">
+                  <label for="name">Prénom :</label>
+                  <input type="text" placeholder="Prénom" id="name" name="name" required> 
+              </div>
+              <div class="form__lastname">
+                  <label for="lastname">Nom :</label>
+                  <input type="text" placeholder="Nom" id="lastname" name="=lastname" required>
+              </div>
+          </div>
+  
+          <div class="form__adress">
+            <label for="adress">Adresse :</label>
+            <input type="text" placeholder="Adresse de livraison" id="adress" name="adress" required>
+          </div>  
+  
+          <div class="form__cityzip">
+              <div class="form__zip">
+                  <label for="postal">Code postal :</label>
+                  <input type="text" placeholder="Code postal" id="postal" name="postal" required>
+              </div>
+              <div class="forum__city">
+                  <label for="city">Ville :</label>
+                  <input type="text" placeholder="Ville" id="city" name="city" required>
+              </div>
+          </div>
+  
+        <div class="form__contact">
+          <div class="form__mail">
+              <label for="mail">Mail :</label>
+              <input type="email" placeholder="Mail" id="mail" name="mail" required>
+          </div>
+          <div class="form__phone">
+              <label for="phone" >Téléphone :</label>
+              <input type="tel" placeholder="Téléphone" id="phone" name="phone" required >
+          </div>
+  
+        </div>  
+        <div class="form__button">
+          <button class="form__submit">Commander
+          </button>
+        </div>
+          
+      </form>
+    </div>
+  
+    
+  
   </main>
 <!--Main>-->
 <!--<Footer-->
@@ -38,6 +95,6 @@
     </ul>
   </footer>
 <!--<Footer-->
-<script src ="./js/product.js"></script> 
+<script src ="./js/cart.js"></script> 
 </body>
 </html>
