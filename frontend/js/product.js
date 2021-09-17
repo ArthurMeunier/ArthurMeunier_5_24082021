@@ -84,6 +84,8 @@ function getProduct() {
 
 
 
+
+
 function addtocart() {
   // Lire le contenu du local storage et le sortir en array sous forme de Json
   let cart = JSON.parse(localStorage.getItem('cart'));
@@ -106,4 +108,10 @@ function addtocart() {
 // On sauvegarde le panier dans local storage sous forme de string
 localStorage.setItem("cart", JSON.stringify(cart));
 document.querySelector('.cart span').textContent = cart.length;
+// showAlert();
+}
+
+// Alerte produit bien ajouté au panier
+function showAlert() {
+  alert("Produit ajouté au panier");
 }

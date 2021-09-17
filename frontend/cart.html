@@ -24,14 +24,19 @@
 <!--Header>-->
 <!--<Main-->
   <main class="main">
-
+    <div id="cartempty">
+      <div class="cartempty__text">Votre panier est vide</div>
+      <a class="cartempty__returnbutton" href="index.html" class="button">Voir les produits</a>
+    </div>
     <div id="cartcontainer">
       <h2>Votre panier</h2>
         <div id="cart__list">
         </div>
         <div id="cart__total">
+          <span class="cart__textprice">Total : </span>
+          <span id="cart__totalprice"></span>
         </div>
-        <button id="cart__empty">Vider le panier</button>
+        <button id="cart__empty" >Vider le panier</button>
     </div>
   
     <div id="formcontainer">
