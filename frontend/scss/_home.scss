@@ -1,17 +1,23 @@
+.productwrap {
+  background-color: $primary-bg-color;
+  @include center;
+  flex-direction: column;
+}
+
 .productstitle {
   @include center;
   font-weight: 700;
-  height: 100px;
+  margin: 2rem 0rem 2rem 0rem;
 }
 
 .productscontainer {
   @include center;
-  margin-top: 4rem;
-  margin-bottom: 14rem;
+  padding: 3rem;
 }
 
 #products {
   @include center;
+  margin-bottom: 11rem;
 }
 
 .product {

@@ -24,68 +24,70 @@
 <!--Header>-->
 <!--<Main-->
   <main class="main">
-    <div id="cartempty">
-      <div class="cartempty__text">Votre panier est vide</div>
-      <a class="cartempty__returnbutton" href="index.html" class="button">Voir les produits</a>
-    </div>
-    <div id="cartcontainer">
-      <h2>Votre panier</h2>
-        <div id="cart__list">
-        </div>
-        <div id="cart__total">
-          <span class="cart__textprice">Total : </span>
-          <span id="cart__totalprice"></span>
-        </div>
-        <button id="cart__empty" >Vider le panier</button>
-    </div>
-  
-    <div id="formcontainer">
-      <h2>Livraison</h2>
-      <form id="form">
-          <div class="form__names">
-              <div class="form__firstname">
-                  <label for="name">Prénom :</label>
-                  <input type="text" placeholder="Prénom" id="name" name="name" required> 
-              </div>
-              <div class="form__lastname">
-                  <label for="lastname">Nom :</label>
-                  <input type="text" placeholder="Nom" id="lastname" name="=lastname" required>
-              </div>
+    <div class=cartwrap>
+      <div id="cartempty">
+        <div class="cartempty__text">Votre panier est vide</div>
+        <a class="cartempty__returnbutton" href="index.html" class="button">Voir les produits</a>
+      </div>
+      <div id="cartcontainer">
+        <h2>Votre panier</h2>
+          <div id="cart__list">
           </div>
-  
-          <div class="form__adress">
-            <label for="adress">Adresse :</label>
-            <input type="text" placeholder="Adresse de livraison" id="adress" name="adress" required>
+          <div id="cart__total">
+            <span class="cart__textprice">Total : </span>
+            <span id="cart__totalprice"></span>
+          </div>
+          <button id="cart__empty" >Vider le panier</button>
+      </div>
+    
+      <div id="formcontainer">
+        <h2>Livraison</h2>
+        <form id="form">
+            <div class="form__names">
+                <div class="form__firstname">
+                    <label for="name">Prénom :</label>
+                    <input type="text" placeholder="Prénom" id="name" name="name" required> 
+                </div>
+                <div class="form__lastname">
+                    <label for="lastname">Nom :</label>
+                    <input type="text" placeholder="Nom" id="lastname" name="=lastname" required>
+                </div>
+            </div>
+    
+            <div class="form__adress">
+              <label for="address">Adresse :</label>
+              <input type="text" placeholder="Adresse de livraison" id="address" name="address" required>
+            </div>  
+    
+            <div class="form__cityzip">
+                <div class="form__zip">
+                    <label for="zip">Code postal :</label>
+                    <input type="text" placeholder="Code postal" id="zip" name="zip" required>
+                </div>
+                <div class="forum__city">
+                    <label for="city">Ville :</label>
+                    <input type="text" placeholder="Ville" id="city" name="city" required>
+                </div>
+            </div>
+    
+          <div class="form__contact">
+            <div class="form__mail">
+                <label for="mail">Mail :</label>
+                <input type="email" placeholder="Mail" id="mail" name="mail" required>
+            </div>
+            <div class="form__phone">
+                <label for="phone" >Téléphone :</label>
+                <input type="tel" placeholder="Téléphone" id="phone" name="phone" required >
+            </div>
+    
           </div>  
-  
-          <div class="form__cityzip">
-              <div class="form__zip">
-                  <label for="postal">Code postal :</label>
-                  <input type="text" placeholder="Code postal" id="postal" name="postal" required>
-              </div>
-              <div class="forum__city">
-                  <label for="city">Ville :</label>
-                  <input type="text" placeholder="Ville" id="city" name="city" required>
-              </div>
+          <div id="form__button">
+            <button class="form__submit" id="form__submit">Commander
+            </button>
           </div>
-  
-        <div class="form__contact">
-          <div class="form__mail">
-              <label for="mail">Mail :</label>
-              <input type="email" placeholder="Mail" id="mail" name="mail" required>
-          </div>
-          <div class="form__phone">
-              <label for="phone" >Téléphone :</label>
-              <input type="tel" placeholder="Téléphone" id="phone" name="phone" required >
-          </div>
-  
-        </div>  
-        <div class="form__button">
-          <button class="form__submit">Commander
-          </button>
-        </div>
-          
-      </form>
+            
+        </form>
+      </div>
     </div>
   
     

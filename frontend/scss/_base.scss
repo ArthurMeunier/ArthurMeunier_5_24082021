@@ -6,11 +6,6 @@ body {
 
 .main {
   font-family: 'Montserrat', sans-serif;
-  background-color: rgb(223, 189, 126);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .header {
@@ -47,13 +42,16 @@ body {
 .footer {
   font-family: 'Montserrat', sans-serif;
   background-color: black;
-  height: 75px;
+  height: 45px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: fixed;
   width: 100%;
+  position: fixed;
+  left: 0;
   bottom: 0;
+  color: white;
+  text-align: center;
   & ul {
     display: flex;
     justify-content: space-around;

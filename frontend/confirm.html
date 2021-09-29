@@ -1,9 +1,9 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='fr'>
 <!--<Head-->
 <head>
 	<meta charset="utf-8">
-	<title>Oricamera</title>
+	<title>Oricamera - Confirmation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="img/orinoco_favicon.png">
@@ -16,22 +16,24 @@
 <!--<Header-->
   <header class="header">
     <a href="index.html"><img src="img/oricamera_logo.png" href="/" class="header__logo" alt="oricamera logo"></a>
-    <a href="cart.html" class ="cart">
-        <i class="fas fa-shopping-cart cart__icon"></i>
-      <span class="cart__number">0</span>
     </a>
   </header>
 <!--Header>-->
 <!--<Main-->
-  <main class="main">
-    <div class ="productwrap">
-      <h2 class="productstitle">Nos produits</h2>
-      <div class="productscontainer">
-          <div id="products">
-          </div>
+  <main class="main mainconfirm">
+    <div class="confirm">
+      <div class="confirm__title">
+      Votre commande a bien été prise en compte.
       </div>
-    </div>
+      <div class="confirm__row1">
+      Prix total : <span id="confirm__price"></span>
+      </div>
+      <div class="confirm__row2">
+      Votre numéro de commande : <span id="confirm__orderid"></span>
 
+      </div>
+      
+    </div>
   </main>
 <!--Main>-->
 <!--<Footer-->
@@ -42,6 +44,6 @@
     </ul>
   </footer>
 <!--<Footer-->
-<script src ="./js/index.js"></script> 
+<script src ="./js/confirm.js"></script> 
 </body>
 </html>

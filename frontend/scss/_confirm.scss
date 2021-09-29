@@ -1,0 +1,29 @@
+
+
+.confirm {
+  background-color: $primary-bg-color;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  &__row1 {
+    margin-bottom: 10px;
+  }
+}
+
+.confirm__title {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+#confirm__price {
+  font-weight: bold;
+}
+
+
+#confirm__orderid {
+  font-weight: bold;
+}
+

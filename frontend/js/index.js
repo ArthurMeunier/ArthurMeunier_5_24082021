@@ -42,7 +42,10 @@ function getProducts() {
       {
       }
     })
-    .catch(function(error) {
-      alert(error)
+    .catch(function(errormessage) {
+      let error = document.createElement ("span");
+      error.className = "error";
+      error.innerText = errormessage;
+      productscontainer.appendChild(error);
     })
 }

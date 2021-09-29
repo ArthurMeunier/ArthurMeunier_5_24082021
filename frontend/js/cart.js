@@ -81,6 +81,7 @@ function displayCart() {
 
 displayCart();
 
+
 // Vider le panier
 
 const emptyCart = document.querySelector("#cart__empty");
@@ -114,7 +115,7 @@ function refreshTotal() {
   for (let t = 0; t < cart.length; t++) {
     let item = cart[t];
     totalPrice = totalPrice + item.price;
-  }
+  } 
 
   // Additioner les prix
   const formatPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(totalPrice / 100);
@@ -125,12 +126,53 @@ function refreshTotal() {
 }
 
 
-// CREER UN TABLEAU AVEC LES DONNEES DU FORM :
+// Selection dans le DOM
 
-// contact {
-//   [
-//     firstname : document.getElementById("name").value;
-//   ]
-// }
-// console.log (document.getElementById("name").value);
- // 
+let formbtn = document.getElementById("form__submit");
+let inputName = document.getElementById("name");
+let inputLastName = document.getElementById("lastname");
+let inputAdress = document.getElementById("address");
+let inputPostal = document.getElementById("zip");
+let inputCity = document.getElementById("city");
+let inputMail = document.getElementById("mail");
+let inputPhone = document.getElementById("phone");
+
+
+
+formbtn.addEventListener("click", (e) => {
+  
+  const datatosend = {
+    contact: {
+      firstName: inputName.value,
+      lastName: inputLastName.value,
+      city: inputCity.value,
+      address: inputAdress.value,
+      email: inputMail.value,
+    },
+    products: [],
+  };
+
+  e.preventDefault();
+  cart.forEach(item => {
+    datatosend.products.push(item.id);
+  });
+
+  // Préparation du prix formaté pour l'afficher sur la prochaine page
+  const carttotalprice = document.querySelector("#cart__totalprice");
+
+  let priceConfirm = document.querySelector("#cart__totalprice").innerText;
+
+  const senddata = fetch("http://localhost:3000/api/cameras/order", {
+    method: "POST",
+    body: JSON.stringify(datatosend),
+    headers: { 
+    "Content-Type": "application/json",
+    },
+  }).then(response => response.json())
+    .then(order => {
+      localStorage.clear();
+      window.location.href="confirm.html?orderId="+order.orderId;
+      localStorage.setItem("orderId", order.orderId);
+      localStorage.setItem("total", priceConfirm);
+  });
+});

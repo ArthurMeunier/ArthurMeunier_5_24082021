@@ -5,8 +5,11 @@
 }
 
 .productcontainer {
-  margin-bottom: 7rem;
+ padding: 4.5rem;
+ background-color: $primary-bg-color;
+ @include center;
 }
+
 
 .productinfo {
   display: flex;
@@ -23,7 +26,6 @@
   transform: scale(1);
   transition: 0.3s;
   text-decoration: none;
-  margin-top: 3rem;
   &__img {
   object-fit: cover;
   height: 200px;
