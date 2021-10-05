@@ -6,6 +6,8 @@
 	<title>Oricamera - Panier</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (min-width:1px) and (max-width: 480px)" href="css/mobile.css"/>
+  <link rel="stylesheet" media="screen and (min-width:481px) and (max-width: 768px)" href="css/tabletP.css"/>
   <link rel="icon" type="image/png" href="img/orinoco_favicon.png">
   <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,900;1,500;1,600;1,800;1,900&display=swap');</style>
   <script src="https://kit.fontawesome.com/635b13c360.js" crossorigin="anonymous"></script>
@@ -42,7 +44,9 @@
     
       <div id="formcontainer">
         <h2>Livraison</h2>
-        <form id="form">
+        <form id="form" onsubmit="return sendForm()">
+          <!-- avant le submit, il déclenche une fonction; si la fonction renvoie "false", le submit est arrêté
+          On est obligé d'enclencher le submit pour que le formulaire effectue la validation-->
             <div class="form__names">
                 <div class="form__firstname">
                     <label for="name">Prénom :</label>
@@ -82,8 +86,7 @@
     
           </div>  
           <div id="form__button">
-            <button class="form__submit" id="form__submit">Commander
-            </button>
+            <input type="submit" class="form__submit" id="form__submit" value="Commander">
           </div>
             
         </form>

@@ -1,0 +1,84 @@
+/* ### MOBILE | WIDTH: 1PX TO 480PX */
+
+/* ### INDEX ### */
+.productscontainer {
+  padding: 0;
+}
+
+#products {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+
+.product {
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+.footer ul {
+  padding-right: 0;
+}
+
+/* ### PRODUCT ### */
+.productcontainer {
+  padding: 2.5rem;
+}
+
+
+/* ### CART ### */
+#cart__list {
+  width: 100%;
+}
+
+.cart__option {
+  width: auto;
+}
+
+.cart__name {
+  width: auto;
+}
+
+.cart__price {
+  width: auto;
+}
+
+#cart__total {
+  width: 60%;
+}
+
+label {
+  width: 115px;
+  font-size: 10px;
+}
+
+input {
+  font-size: 10px;
+}
+
+.form__names {
+  flex-direction: column;
+}
+
+.form__adress {
+  width: auto;
+}
+
+.form__adress input {
+  width: auto;
+}
+
+.form__cityzip {
+  flex-direction: column;
+}
+
+.form__contact {
+  flex-direction: column;
+}
+
+.form__submit {
+  width: 50%;
+}
+
+.cartempty__returnbutton {
+  width: 50%;
+}

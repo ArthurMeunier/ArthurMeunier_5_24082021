@@ -1,39 +1,53 @@
 /* ### TABLET PORTRAIT CSS | WIDTH: 481PX TO 768PX ### */
-/* ### MAIN ### */
 
-body {
-  max-width: 768px;
+#products {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
 }
 
-.footer {
-  max-width: 768px;
+.product {
+  margin: 1rem 0rem 1rem 0rem;
 }
 
-.explore__btn {
-  width: 15rem;
+
+/* ### PRODUCT ### */
+
+#cart__list {
+  width: auto;
 }
 
-.tuto__step {
+
+
+.form__submit {
   width: 50%;
 }
 
-.cards {
+.form__names {
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.card {
-  width: 75%;
+
+
+
+.form__adress {
+  width: auto;
 }
 
-.submenu__tick {
-  right: -15%;
+.form__adress input {
+  width: auto;
 }
 
-.submenu__item:hover .submenu__tick {
-  transform: translateX(-100%);
+.form__cityzip {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.submenu__item:hover .submenu__price {
-  transform: translateX(-125%);
+.form__contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

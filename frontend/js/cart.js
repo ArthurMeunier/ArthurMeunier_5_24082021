@@ -137,10 +137,9 @@ let inputCity = document.getElementById("city");
 let inputMail = document.getElementById("mail");
 let inputPhone = document.getElementById("phone");
 
+// Au clic sur "Commander", on vérifie et si la validation est bonne, on envoie les données
 
-
-formbtn.addEventListener("click", (e) => {
-  
+function sendForm() {
   const datatosend = {
     contact: {
       firstName: inputName.value,
@@ -152,7 +151,6 @@ formbtn.addEventListener("click", (e) => {
     products: [],
   };
 
-  e.preventDefault();
   cart.forEach(item => {
     datatosend.products.push(item.id);
   });
@@ -175,4 +173,5 @@ formbtn.addEventListener("click", (e) => {
       localStorage.setItem("orderId", order.orderId);
       localStorage.setItem("total", priceConfirm);
   });
-});
+  return false;
+}
