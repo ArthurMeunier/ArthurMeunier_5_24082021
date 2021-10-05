@@ -12,17 +12,17 @@
 
 .productscontainer {
   @include center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 #products {
   @include center;
-  margin-bottom: 11rem;
+  margin-bottom: 15rem;
 }
 
 .product {
   background-color: $tertiary-color;
-  width: 225px;
+  width: 150px;
   margin-right: 20px;
   margin-left: 20px;
   border-radius: 20px;
@@ -39,7 +39,7 @@
   }
 &__img {
   object-fit: cover;
-  height: 200px;
+  height: 150px;
   border-radius: 20px 20px 0px 0px;
 }
 &__title {

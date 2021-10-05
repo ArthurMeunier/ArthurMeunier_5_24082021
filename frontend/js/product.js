@@ -6,10 +6,12 @@ let id = params.get("id");
 window.onload = function ()
 {
   getProduct();
+  // Lecture du panier à partir du LocalStorage
   let cart = JSON.parse(localStorage.getItem('cart'));
   if (cart === null) {
     cart = [];
   }
+  // Afficher le nombre d'articles présents dans le panier
   document.querySelector('.cart span').textContent = cart.length;
 }
 
@@ -44,6 +46,7 @@ function getProduct() {
 
         let price = document.createElement ("div");
         price.className = "productinfo__price"
+        // On adapte le prix au format €
         const formatPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(product.price/100)
         price.innerText = formatPrice;
         productinfo.appendChild(price);
@@ -57,6 +60,7 @@ function getProduct() {
         lensetext.innerText = "Lentille :";
         lensewrap.appendChild(lensetext);
   
+        // On crée la liste des options du produit
         let lenses = document.createElement ("select");
         lenses.id = "lensesselect";
         lenses.className = "productinfo__lenses";
@@ -72,21 +76,8 @@ function getProduct() {
     })
 }
 
-
-// add items to cart
-
-
-
-
-// 
-//   onLoadCartNumbers();
-// }
-
-
-
-
-
-function addtocart() {
+// On ajoute le produit au panier au clic sur le bouton
+function addToCart() {
   // Lire le contenu du local storage et le sortir en array sous forme de Json
   let cart = JSON.parse(localStorage.getItem('cart'));
   if (cart==null) {

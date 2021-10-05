@@ -4,3 +4,18 @@
 .product {
   width: 160px;
 }
+
+#products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 0;
+}
+
+.product__img {
+  height: 100px;
+}
+
+.productstitle {
+  margin: 2rem 0rem 0.5rem 0rem;
+}

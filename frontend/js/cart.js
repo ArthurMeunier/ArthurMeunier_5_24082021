@@ -20,7 +20,7 @@ function hideCartIfEmpty() {
 }
 
 // Contenu de la page affichée lorsque le panier est vide
-function emptypage() {
+function emptyPage() {
   let divempty = document.getElementById("cartempty");
   let emptydiv = document.createElement("div");
   emptydiv.className = "cart__isempty"
@@ -43,6 +43,7 @@ function displayCart() {
   }
   else {
     document.getElementById("cartempty").style.display = "none";
+    // On affiche le contenu de local storage sur la page
     for (let i = 0; i < cart.length; i++) {
       let item = cart[i];
 
@@ -75,6 +76,7 @@ function displayCart() {
       del.appendChild(delicon);
       itemdiv.appendChild(del);
     }
+    // On recalcule le prix total
     refreshTotal();
   }
 }
@@ -88,12 +90,15 @@ const emptyCart = document.querySelector("#cart__empty");
 emptyCart.addEventListener("click", () => {
   let result = confirm("Voulez-vous vraiment vider le panier?");
   if (result) {
+    // On vide le localStorage
     localStorage.clear();
+    // On cache la zone d'affichage du panier
     cart = [];
     document.querySelector('.cart span').textContent = cart.length;
     document.getElementById("cart__list").innerHTML = "";
     document.querySelector("#cart__empty").style.display = "none";
     hideCartIfEmpty();
+    // On montre la zone d'affichage du panier
     document.getElementById("cartempty").style.display = "flex";
   }
 });
@@ -101,8 +106,11 @@ emptyCart.addEventListener("click", () => {
 
 // Supprimer un objet du panier
 function removeItem(index) {
+  // On enlève un produit du array cart avec "splice"
   cart.splice(index, 1);
+  // On sauvegarde le panier modifié dans le localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
+  // On met à jour le nombre de produit dans le header
   document.querySelector('.cart span').textContent = cart.length;
   displayCart();
 }
@@ -119,8 +127,6 @@ function refreshTotal() {
 
   // Additioner les prix
   const formatPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(totalPrice / 100);
-  console.log(totalPrice);
-
   // Afficher le prix total
   carttotalprice.innerHTML = formatPrice;
 }
@@ -138,8 +144,9 @@ let inputMail = document.getElementById("mail");
 let inputPhone = document.getElementById("phone");
 
 // Au clic sur "Commander", on vérifie et si la validation est bonne, on envoie les données
-
+// Le formulaire valide automatiquement le contenu avec "required" et "input type="email""
 function sendForm() {
+  // On prépare les données à envoyer à l'API : formulaire
   const datatosend = {
     contact: {
       firstName: inputName.value,
@@ -151,6 +158,7 @@ function sendForm() {
     products: [],
   };
 
+  // On prépare les données à envoyer à l'API : panier
   cart.forEach(item => {
     datatosend.products.push(item.id);
   });
@@ -160,6 +168,7 @@ function sendForm() {
 
   let priceConfirm = document.querySelector("#cart__totalprice").innerText;
 
+  // Appel de l'API, on envoie les données
   const senddata = fetch("http://localhost:3000/api/cameras/order", {
     method: "POST",
     body: JSON.stringify(datatosend),
@@ -169,9 +178,11 @@ function sendForm() {
   }).then(response => response.json())
     .then(order => {
       localStorage.clear();
-      window.location.href="confirm.html?orderId="+order.orderId;
       localStorage.setItem("orderId", order.orderId);
       localStorage.setItem("total", priceConfirm);
+      // On renvoie le visiteur à la page de confirmatino
+      window.location.href="confirm.html?orderId="+order.orderId;
   });
+  // On empêche l'action "submit" | On a besoin que le formulaire enclenche l'action submit pour valider les donnéees
   return false;
 }
