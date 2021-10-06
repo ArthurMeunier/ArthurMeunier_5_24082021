@@ -19,19 +19,10 @@ function hideCartIfEmpty() {
   cartlist.innerHTML = emptycart;
 }
 
-// Contenu de la page affichée lorsque le panier est vide
-function emptyPage() {
-  let divempty = document.getElementById("cartempty");
-  let emptydiv = document.createElement("div");
-  emptydiv.className = "cart__isempty"
-  divempty.appendChild(emptydiv);
-}
-
 // Définition des points d'injection dans le HTML
 const cartlist = document.querySelector("#cart__list");
 const cartlistitem = document.querySelector(".cart__item");
 const carttotalprice = document.querySelector("#cart__totalprice");
-
 
 // Afficher les objets du panier
 function displayCart() {
@@ -83,9 +74,7 @@ function displayCart() {
 
 displayCart();
 
-
 // Vider le panier
-
 const emptyCart = document.querySelector("#cart__empty");
 emptyCart.addEventListener("click", () => {
   let result = confirm("Voulez-vous vraiment vider le panier?");
@@ -103,7 +92,6 @@ emptyCart.addEventListener("click", () => {
   }
 });
 
-
 // Supprimer un objet du panier
 function removeItem(index) {
   // On enlève un produit du array cart avec "splice"
@@ -115,25 +103,21 @@ function removeItem(index) {
   displayCart();
 }
 
+// Prix total du panier
 function refreshTotal() {
-  // Prix total du panier
-
   let totalPrice = 0;
   // Chercher les prix des produits dans le panier
   for (let t = 0; t < cart.length; t++) {
     let item = cart[t];
     totalPrice = totalPrice + item.price;
   } 
-
   // Additioner les prix
   const formatPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(totalPrice / 100);
   // Afficher le prix total
   carttotalprice.innerHTML = formatPrice;
 }
 
-
 // Selection dans le DOM
-
 let formbtn = document.getElementById("form__submit");
 let inputName = document.getElementById("name");
 let inputLastName = document.getElementById("lastname");

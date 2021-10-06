@@ -1,5 +1,4 @@
 // Récupération de l'id d'un produit
-
 let params = new URL(document.location).searchParams;
 let id = params.get("id");
 
@@ -94,7 +93,6 @@ function addToCart() {
 
   // On ajoute l'objet créé au panier
   cart.push(cartProduct);
-
 
 // On sauvegarde le panier dans local storage sous forme de string
 localStorage.setItem("cart", JSON.stringify(cart));

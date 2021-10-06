@@ -1,5 +1,10 @@
 /* ### TABLET PORTRAIT CSS | WIDTH: 481PX TO 768PX ### */
+/* ### MAIN ### */
+.footer ul {
+  padding-right: 0;
+}
 
+/* ### INDEX ### */
 #products {
   display: flex;
   flex-direction: column;
@@ -10,17 +15,12 @@
   margin: 1rem 0rem 1rem 0rem;
 }
 
-.footer ul {
-  padding-right: 0;
-}
 
-/* ### PRODUCT ### */
 
+/* ### CART ### */
 #cart__list {
   width: auto;
 }
-
-
 
 .form__submit {
   width: 50%;
@@ -32,8 +32,6 @@
   align-items: center;
   flex-direction: column;
 }
-
-
 
 .form__adress {
   width: auto;

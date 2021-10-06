@@ -1,15 +1,14 @@
 /* ### TABLET PORTRAIT CSS | WIDTH: 768PX TO 1024PX ### */
-/* ### MAIN ### */
-
-.product {
-  width: 160px;
-}
-
+/* ### INDEX ### */
 #products {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
-  margin-bottom: 0;
+  margin-bottom: 2rem;
+}
+
+.product {
+  width: 160px;
 }
 
 .product__img {
