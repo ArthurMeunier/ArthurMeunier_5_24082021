@@ -21,7 +21,7 @@
 
 /* ### PRODUCT ### */
 .productcontainer {
-  padding: 3rem;
+  padding: 4rem;
 }
 
 .productinfo {
@@ -59,7 +59,7 @@ label {
 }
 
 input {
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .form__names {

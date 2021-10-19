@@ -127,6 +127,7 @@ let inputCity = document.getElementById("city");
 let inputMail = document.getElementById("mail");
 let inputPhone = document.getElementById("phone");
 
+
 // Au clic sur "Commander", on vérifie et si la validation est bonne, on envoie les données
 // Le formulaire valide automatiquement le contenu avec "required" et "input type="email""
 function sendForm() {
@@ -164,9 +165,12 @@ function sendForm() {
       localStorage.clear();
       localStorage.setItem("orderId", order.orderId);
       localStorage.setItem("total", priceConfirm);
-      // On renvoie le visiteur à la page de confirmatino
+      // On renvoie le visiteur à la page de confirmation
       window.location.href="confirm.html?orderId="+order.orderId;
   });
   // On empêche l'action "submit" | On a besoin que le formulaire enclenche l'action submit pour valider les donnéees
   return false;
 }
+
+
+console.log(inputName);

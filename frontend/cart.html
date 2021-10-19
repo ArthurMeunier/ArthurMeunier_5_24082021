@@ -51,38 +51,38 @@
             <div class="form__names">
                 <div class="form__firstname">
                     <label for="name">Prénom :</label>
-                    <input type="text" placeholder="Prénom" id="name" name="name" required> 
+                    <input type="text" placeholder="Prénom" id="name" name="name" required pattern="[a-zA-Z0-9-]+" minlength="2" maxlength="20"> 
                 </div>
                 <div class="form__lastname">
                     <label for="lastname">Nom :</label>
-                    <input type="text" placeholder="Nom" id="lastname" name="=lastname" required>
+                    <input type="text" placeholder="Nom" id="lastname" name="=lastname" pattern="[a-zA-Z0-9-]+" minlength="2" maxlength="20" required>
                 </div>
             </div>
     
             <div class="form__adress">
               <label for="address">Adresse :</label>
-              <input type="text" placeholder="Adresse de livraison" id="address" name="address" required>
+              <input type="text" placeholder="Adresse de livraison" id="address" name="address" pattern="[a-zA-Z0-9- ]+" minlength="2" maxlength="60" required>
             </div>  
     
             <div class="form__cityzip">
                 <div class="form__zip">
                     <label for="zip">Code postal :</label>
-                    <input type="text" placeholder="Code postal" id="zip" name="zip" required>
+                    <input type="text" placeholder="Code postal" id="zip" name="zip" pattern="\d{5}" required>
                 </div>
                 <div class="forum__city">
                     <label for="city">Ville :</label>
-                    <input type="text" placeholder="Ville" id="city" name="city" required>
+                    <input type="text" placeholder="Ville" id="city" name="city" pattern="[a-zA-Z0-9- ]+" minlength="2" maxlength="30" required>
                 </div>
             </div>
     
           <div class="form__contact">
             <div class="form__mail">
                 <label for="mail">Mail :</label>
-                <input type="email" placeholder="Mail" id="mail" name="mail" required>
+                <input type="email" placeholder="Mail" id="mail" name="mail" pattern="(\w\.?)+@[\w\.-]+\.\w{2,4}" required>
             </div>
             <div class="form__phone">
                 <label for="phone" >Téléphone :</label>
-                <input type="tel" placeholder="Téléphone" id="phone" name="phone" required >
+                <input type="tel" placeholder="Téléphone" id="phone" name="phone" pattern="\d{10}" required >
             </div>
     
           </div>  
